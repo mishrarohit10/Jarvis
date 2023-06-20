@@ -50,4 +50,4 @@ pip install pyttsx3 SpeechRecognition wikipedia
 
 # Contributions
 
-Contributions to this virtual assistant are welcome! If you have any suggestions, improvements, or new features to add, feel free to create a pull request.
+    Contributions to this virtual assistant are welcome! If you have any suggestions, improvements, or new features to add, feel free to create a pull request.
