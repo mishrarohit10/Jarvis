@@ -18,12 +18,12 @@ def speak(audio):
 def wishMe():
     hour = int(datetime.datetime.now().hour)
     if hour >= 0 and hour<=12:
-        speak("Good Morning Master Wyane")
+        speak ("Tora mai ke chodho")
     elif hour >=12 and hour <= 18:
-        speak("Good Afternoon Master Wayne")
+        speak("Tora mai ke chodho")
     else:
-        speak("Good Evening Master Wayne")
-    speak("Master Wayne know your limits")
+        speak("Tora mai ke chodho")
+    speak(" niche utar Tora mai ke chodo")
 
 def takecommand():
     r = sr.Recognizer()
@@ -33,8 +33,8 @@ def takecommand():
         audio = r.listen(source)
     try:
         print("Recognizing....")
-        query = r.recognize_google(audio, Language='en-in')
-        print(f"User said{query}\n")
+        query = r.recognize_google(audio, language='en-in')
+        print(f"User said {query}\n")
 
     except Exception as e:
         # print(e)
@@ -42,26 +42,27 @@ def takecommand():
         return "None"
     return query
 
-def sendEmail(to, content):
-    server = smtplib.SMTP('smtp.gmail.com',587)
-    server.ehlo()
-    server.starttls()
-    server.login('sendersmailaddress@gmail.com','your-password')
-    server.sendmail('sendersmailaddress@gmail.com',to,content)
-    server.close()
+# def sendEmail(to, content):
+#     server = smtplib.SMTP('smtp.gmail.com',587)
+#     server.ehlo()
+#     server.starttls()
+#     server.login('sendersmailaddress@gmail.com','your-password')
+#     server.sendmail('sendersmailaddress@gmail.com',to,content)
+#     server.close()
 
 
 if __name__ == "__main__":
     wishMe()
     takecommand()
-    if 0:
+    while True:
         query = takecommand().lower()
 
-        if 'wikipedia' in query:
+        if 'wikipedia' in query.lower():
             speak('Searching wikipedia')
             query = query.replace("wikipedia", "")
             results = wikipedia.summary(query, sentences=2)
             speak("According to wikipedia")
+            print(results)
             speak(results)
 
         elif 'open youtube' in query:
@@ -83,19 +84,19 @@ if __name__ == "__main__":
             str = datetime.datetime.now().strftime("%H:%M:%S")
             speak(f"Sir the time is {str}")
 
-        elif 'open code' in query:
-            codepath = "C:\\Users\\Rohit Mishra\\AppData\\Local\\Programs\\Microsoft VS Code\\Code.exe"
-            os.startfile(codepath)
+        # elif 'open code' in query:
+        #     codepath = "C:\\Users\\Rohit Mishra\\AppData\\Local\\Programs\\Microsoft VS Code\\Code.exe"
+        #     os.startfile(codepath)
 
-        elif 'send email' in query:
-            try:
-                speak('what should i say?')
-                content = takecommand()
-                to = "mishrarohit316x@gmail.com"
-                sendEmail(to,content)
-                speak("email has been sent")
-            except Exception as e:
-                print(e)
-                speak('im sorry master wayne')
-        else:
-            speak('Batman has no limits')
+        # elif 'send email' in query:
+        #     try:
+        #         speak('what should i say?')
+        #         content = takecommand()
+        #         to = "mishrarohit316x@gmail.com"
+        #         sendEmail(to,content)
+        #         speak("email has been sent")
+        #     except Exception as e:
+        #         print(e)
+        #         speak('im sorry master wayne')
+        # else:
+        #     speak('')
