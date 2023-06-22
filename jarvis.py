@@ -18,12 +18,12 @@ def speak(audio):
 def wishMe():
     hour = int(datetime.datetime.now().hour)
     if hour >= 0 and hour<=12:
-        speak ("Tora mai ke chodho")
+        speak ("good morning")
     elif hour >=12 and hour <= 18:
-        speak("Tora mai ke chodho")
+        speak("good afternoon")
     else:
-        speak("Tora mai ke chodho")
-    speak(" niche utar Tora mai ke chodo")
+        speak("have a nice day")
+    speak("good night")
 
 def takecommand():
     r = sr.Recognizer()
