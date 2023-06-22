@@ -22,10 +22,10 @@ To run the virtual assistant, you need to have the following dependencies instal
     webbrowser: Built-in Python library for opening web browsers
     datetime: Built-in Python library for working with dates and times
 
-You can install these dependencies using pip by running the following command:
-```
-pip install pyttsx3 SpeechRecognition wikipedia
-```
+# Install the required dependencies:
+
+    pip install -r requirements.txt
+
 # Usage
 
     Run the script virtual_assistant.py using Python.
